@@ -1,0 +1,146 @@
+<!DOCTYPE html>>
+<!--
+CSS 문법:
+css_selector {
+    property: value1 value2 ...;
+}
+
+css selector(선택자): HTML 문서에서 HTML의 요소(element)들을 찾는 방법.
+1. tag: HTML 태그. body, div, span, ul, li, a, ...
+2. class: HTML 태그의 class 속성 값. .class_name 형식으로 사용.
+3. id: HTML 태그의 id 속성 값. #id_name 형식으로 사용.
+4. *: HTML의 모든 요소.
+5. pseudo selector(가상 선택자): 이벤트. selector:pseudo_selector 형식으로 사용.
+6. 자식 요소(child element)
+    (1) child element: HTML 문서 구조에서 "바로 아래"에 있는 모든 요소들.
+        parent > child
+    (2) descendant element: HTML 문서 구조에서 아래에 있는 모든 요소들.
+        ancestor descendant
+7. 여러 요소들을 나열할 때는 comma(,)로 구분.
+-->
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web2</title>
+    <style>
+        /* 태그 li 중에서 class 속성이 menu_item인 요소들 */
+        li.menu_item {
+            list-style-type: none;
+            display: inline-block;
+            width: 80px;
+            border: 1px solid black;
+            border-radius: 16px;
+            padding: 4px;
+            text-align: center;
+        }
+
+        a.menu_link {
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a.menu_link:visited {
+            color: black;
+        }
+
+        div.c1 {
+            border: 2px solid darkgray;
+            /* 테두리선 두께, 모양, 색깔 */
+            margin: 16px;
+            /* 바깥쪽 여백 */
+            padding: 8px;
+            /* 안쪽 여백 */
+        }
+
+        div.c2 {
+            border: 2px dotted red;
+            /* 테두리선 두께, 모양, 색깔 */
+            margin: 16px;
+            /* 바깥쪽 여백 */
+            padding: 8px;
+            /* 안쪽 여백 */
+        }
+
+        /* div.c2#id1 */
+        div#id1 {
+            color: blue;
+            /* 글자색 */
+            font-weight: bold;
+            /* 폰트 굵기 */
+        }
+
+        /* 모든 section 요소들에 테두리선, 마진(바깥 여백) 설정 */
+        section {
+            border: 1px solid darkgray;
+            margin: 16px;
+
+        }
+
+        /* id가 "sec1"인 section과 모든 p 요소들 */
+        section#sec1,
+        p {
+            border: 2px solid darkgreen;
+            margin: 16px;
+        }
+
+        /* id가 "sec2"인 section의 자식(child, 바로 아래에 있는) p 요소 */
+        section#sec2>p {
+            color: crimson;
+            border: 1px solid black;
+        }
+
+        /* id가 "sec3"인 section 아래에 있는 모든 p 요소 */
+        section#sec3 p {
+            color: dodgerblue;
+            border: 1px dashed black;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>CSS Selector</h1>
+    <div>
+        <ul class="menu"> <!-- unordered list-->
+            <li class="menu_item"> <!-- list item -->
+                <a class="menu_link" href="https://www.naver.com">네이버</a>
+            </li>
+            <li class="menu_item">
+                <a class="menu_link" href="https://www.daum.net">다음</a>
+            </li>
+            <li class="menu_item">
+                <a class="menu_link" href="https://www.google.com">구글</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="c1">여기는 c1 클래스입니다.</div>
+    <div class="c1">여기도 c1 클래스입니다.</div>
+    <div class="c2">여기는 c2 클래스입니다.</div>
+    <div class="c2" id="id1">여기는 c2 클래스, 아이디는 id1 입니다.</div>
+
+    <section id="sec1">
+        <p>Section 1, Paragraph 1</p>
+        <p>Section 1, Paragraph 2</p>
+        <article>
+            <p>Section 1, Article, Paragraph</p>
+        </article>
+    </section>
+    <section id="sec2">
+        <p>Section 2, Paragraph 1</p>
+        <p>Section 2, Paragraph 2</p>
+        <article>
+            <p>Section 2, Article, Paragraph</p>
+        </article>
+    </section>
+    <section id="sec3">
+        <p>Section 3, Paragraph 1</p>
+        <p>Section 3, Paragraph 2</p>
+        <article>
+            <p>Section 3, Article, Paragraph</p>
+        </article>
+    </section>
+
+</body>
+
+</html>
