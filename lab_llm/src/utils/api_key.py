@@ -10,6 +10,13 @@ def get_gemini_api_key():
     return api_key
 
 
+def get_openai_api_key():
+    load_dotenv()
+    api_key = os.getenv("OPENAI_API_KEY")
+    
+    return api_key
+
+
 if __name__ == "__main__":
     key = get_gemini_api_key()
     print(key)
